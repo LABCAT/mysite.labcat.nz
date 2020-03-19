@@ -2,6 +2,7 @@
 public/app/plugins/*
 !public/app/plugins/.gitkeep
 public/app/mu-plugins/*/
+!public/app/mu-plugins/mysite/
 public/app/upgrade
 public/app/uploads/*
 !public/app/uploads/.gitkeep

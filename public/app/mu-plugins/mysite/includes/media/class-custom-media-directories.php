@@ -48,8 +48,8 @@ class CustomMediaDirectories {
         // Check the post-type of the current post
         if( in_array( $post_type , $this->custom_directories ) ){
             $upload['subdir'] = '/' . $post_type;
-            $upload['basedir'] = wp_normalize_path( ABSPATH . 'media' . $post_type );
-            $upload['baseurl'] = home_url( 'media' .$upload['subdir'] );
+            $upload['basedir'] = str_replace( 'wp/', '', wp_normalize_path( ABSPATH . 'media' . $upload['subdir'] ) );
+            $upload['baseurl'] = home_url( 'media' . $upload['subdir'] );
             $upload['path'] = $upload['basedir'];
             $upload['url']  = $upload['baseurl'];
         }

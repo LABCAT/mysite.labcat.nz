@@ -55,6 +55,8 @@ final class MySite {
         include_once( LABCAT_PLUGIN_PATH . 'includes/post-types/trait-post-type-trait.php' );
         include_once( LABCAT_PLUGIN_PATH . 'includes/post-types/class-audio-project-post-type.php' );
         include_once( LABCAT_PLUGIN_PATH . 'includes/post-types/class-creative-coding-post-type.php' );
+
+        include_once( LABCAT_PLUGIN_PATH . 'includes/media/class-custom-media-directories.php' );
        
     }
 

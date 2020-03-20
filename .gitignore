@@ -4,8 +4,8 @@ public/app/plugins/*
 public/app/mu-plugins/*/
 !public/app/mu-plugins/mysite/
 public/app/upgrade
-public/app/uploads/*
-!public/app/uploads/.gitkeep
+public/media/*
+!public/media/.gitkeep
 
 # WordPress
 public/wp

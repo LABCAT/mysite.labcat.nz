@@ -45,12 +45,7 @@ trait PostTypeTrait {
                 return $post_id;
                 break;
             case 'featuredImage':
-                $img = '';
-                $file = get_attached_file( get_post_thumbnail_id( $post_id ) );
-                if( file_exists( $file ) ){
-                    $img = get_the_post_thumbnail_url( $post_id, 'full' );
-                }
-                return $img;
+                return get_the_post_thumbnail_url( $post_id, 'full' );
                 break;
         }
     }

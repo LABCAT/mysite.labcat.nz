@@ -24,7 +24,8 @@ trait PostTypeTrait {
     public static function add_addtional_rest_fields(){
         $rest_fields = [
             'key',
-            'featuredImage'
+            'featuredImage',
+            'reactComponent'
         ];
 
         foreach( $rest_fields as $rest_field ){
@@ -47,7 +48,16 @@ trait PostTypeTrait {
             case 'featuredImage':
                 return get_the_post_thumbnail_url( $post_id, 'full' );
                 break;
+            case 'reactComponent':
+                $filename = get_post_meta( $post_id, '_wp_page_template', true );
+                return $filename ? $this->get_page_template_name( $filename ) : '';
+                break;
         }
+    }
+
+    public function get_page_template_name( $filename ){
+        $templates = get_page_templates(); 
+        return $templates[ $filename ];
     }
 
 }

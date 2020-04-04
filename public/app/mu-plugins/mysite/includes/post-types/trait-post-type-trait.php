@@ -56,7 +56,11 @@ trait PostTypeTrait {
     }
 
     public function get_page_template_name( $filename ){
+<<<<<<< HEAD
         $templates = get_page_templates(); 
+=======
+        $templates = \wp_get_theme()->get_page_templates(); 
+>>>>>>> b30069a8b6046696f579eaf0215644d596d368af
         return $templates[ $filename ];
     }
 

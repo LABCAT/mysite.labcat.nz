@@ -39,7 +39,7 @@ trait PostTypeTrait {
         }
     }
 
-    public static function get_rest_data( $object, $field_name, $request ){
+    public function get_rest_data( $object, $field_name, $request ){
         $post_id = $object[ 'id' ];
         switch ($field_name) {
             case 'key':
@@ -57,7 +57,7 @@ trait PostTypeTrait {
 
     public function get_page_template_name( $filename ){
         $templates = \wp_get_theme()->get_page_templates(); 
-        return $templates[ $filename ];
+        return isset( $templates[ $filename ] ) ? $templates[ $filename ] : '';
     }
 
 }

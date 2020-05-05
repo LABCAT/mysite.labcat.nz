@@ -21,15 +21,16 @@ class CustomMediaDirectories {
 
     public function __construct()
     {   
-        add_filter( 'wp_get_attachment_url', [ $this, 'custom_uploads_url' ] );
+        add_filter( 'pre_option_upload_path', [ $this, 'absolute_upload_path' ] );
         add_filter( 'upload_dir', [ $this, 'alter_post_type_directory' ], 999);
         add_filter( 'big_image_size_threshold', '__return_false' );
     }
 
-    //turns relative attachment urls in absolute urls
-    public function custom_uploads_url( $url ) {
-        $url = str_replace( 'wp/../', '', $url );
-        return $url;
+    public function absolute_upload_path( $upload_path ) {
+        if( defined( 'ABSOLUTE_UPLOADS' ) ){
+            return ABSOLUTE_UPLOADS;
+        }
+        return $upload_path;   
     }
 
     private $custom_directories = [
@@ -39,7 +40,7 @@ class CustomMediaDirectories {
 
     public function alter_post_type_directory( $upload ){
         if( ! isset( $_REQUEST['post_id'] ) ){
-            return;
+            return $upload;
         }
 
         $post_id = $_REQUEST['post_id'];
@@ -47,11 +48,13 @@ class CustomMediaDirectories {
 
         // Check the post-type of the current post
         if( in_array( $post_type , $this->custom_directories ) ){
+
             $upload['subdir'] = '/' . $post_type;
-            $upload['basedir'] = str_replace( 'wp/', '', wp_normalize_path( ABSPATH . 'media' . $upload['subdir'] ) );
+            $upload['basedir'] = wp_normalize_path( ABSPATH . 'media' . $upload['subdir'] );
             $upload['baseurl'] = home_url( 'media' . $upload['subdir'] );
             $upload['path'] = $upload['basedir'];
             $upload['url']  = $upload['baseurl'];
+
         }
 
         return $upload;

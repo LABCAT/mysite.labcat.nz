@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e5dddde0b96740784e0cc2a670753e7",
+    "content-hash": "6a59181edd251c96c9c66e46b08138b4",
     "packages": [
         {
             "name": "composer/installers",
@@ -540,6 +540,26 @@
                 "environment"
             ],
             "time": "2020-03-12T13:44:15+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/gallery-custom-links",
+            "version": "1.2.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/gallery-custom-links/",
+                "reference": "tags/1.2.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/gallery-custom-links.1.2.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/gallery-custom-links/"
         },
         {
             "name": "wpackagist-plugin/processing-projects",

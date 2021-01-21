@@ -33,7 +33,7 @@ trait PostTypeTrait {
                 self::$post_type_slug,
                 $rest_field,
                 [
-                    'get_callback' => [ $this, 'get_rest_data' ]
+                    'get_callback' => [ self, 'get_rest_data' ]
                 ]
             );
         }

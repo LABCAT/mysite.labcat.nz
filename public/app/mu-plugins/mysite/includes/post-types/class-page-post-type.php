@@ -32,7 +32,7 @@ class Page {
         add_action('rest_api_init', [$this, 'add_addtional_rest_fields'], 99);
     }
 
-    public static function add_addtional_rest_fields()
+    public function add_addtional_rest_fields()
     {
         $rest_fields = [
             'key',

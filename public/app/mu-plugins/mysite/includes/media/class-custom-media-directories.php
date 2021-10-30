@@ -31,7 +31,7 @@ class CustomMediaDirectories {
     public function custom_media_url( $url, $post_id ) {
         $post = get_post( $post_id );
         if( $post->post_type === 'attachment' ){
-            return $post->guid;
+            return str_replace('http', 'https', $post->guid);
         }
         return $url;
     }

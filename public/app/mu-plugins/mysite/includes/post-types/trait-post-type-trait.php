@@ -30,6 +30,9 @@ trait PostTypeTrait {
                 $filename = get_post_meta( $post_id, '_wp_page_template', true );
                 return $filename ? $this->get_page_template_name( $filename ) : '';
                 break;
+            case 'animationLink':
+                return get_post_meta( $post_id, '_animation_url', true );
+                break;
         }
     }
 

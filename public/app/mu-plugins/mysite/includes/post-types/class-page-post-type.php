@@ -37,6 +37,7 @@ class Page {
         $rest_fields = [
             'key',
             'featuredImage',
+            'featuredImages',
             'reactComponent'
         ];
 

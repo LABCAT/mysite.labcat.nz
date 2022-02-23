@@ -31,7 +31,7 @@ class CustomMediaDirectories {
     public function custom_media_url( $url, $post_id ) {
         $post = get_post( $post_id );
         if( $post->post_type === 'attachment' ){
-            return str_replace('http', 'https', $post->guid);
+            return str_replace('http:', 'https:', $post->guid);
         }
         return $url;
     }
@@ -44,6 +44,7 @@ class CustomMediaDirectories {
     }
 
     private $custom_directories = [
+        'animation',
         'audio-project',
         'creative-coding'
     ];

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa88363fc68764c3f068f418c761ff9d",
+    "content-hash": "d233d2cfd0927f0d61fc053a5afce1ae",
     "packages": [
         {
             "name": "composer/installers",
@@ -677,6 +677,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/multiple-featured-images/"
+        },
+        {
+            "name": "wpackagist-plugin/performance-lab",
+            "version": "1.0.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/performance-lab/",
+                "reference": "tags/1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/performance-lab.1.0.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/performance-lab/"
         },
         {
             "name": "wpackagist-plugin/processing-projects",

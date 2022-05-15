@@ -31,7 +31,14 @@ class CustomMediaDirectories {
     public function custom_media_url( $url, $post_id ) {
         $post = get_post( $post_id );
         if( $post->post_type === 'attachment' ){
-            return str_replace('http:', 'https:', $post->guid);
+            $fileURL = $post->guid;
+            if( strpos( $fileURL, 'jpg' ) !== false || strpos( $fileURL, 'png' ) !== false ) {
+                $webpURL = str_replace( ['jpg', 'png'], 'webp', $fileURL );
+                if( @fopen( $webpURL, 'r' ) ) {
+                    $fileURL = $webpURL;
+                }
+            }
+            return str_replace( 'http:', 'https:', $fileURL );
         }
         return $url;
     }

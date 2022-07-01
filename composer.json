@@ -31,9 +31,9 @@
   ],
   "require": {
     "php": ">=7.4",
-    "composer/installers": "^1.12",
-    "vlucas/phpdotenv": "^4.2.2",
-    "oscarotero/env": "^1.2.0",
+    "composer/installers": "^2.1",
+    "vlucas/phpdotenv": "^5.4",
+    "oscarotero/env": "^2.1",
     "roots/wordpress-core-installer": "1.100.0",
     "roots/wordpress": "6.0.0",
     "roots/wp-config": "1.0.0",

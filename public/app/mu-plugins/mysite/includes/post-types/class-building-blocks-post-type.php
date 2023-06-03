@@ -46,6 +46,7 @@ class BuildingBlocks {
             'featuredImage',
             'featuredImages',
             'reactComponent'
+        ];
 
         foreach ($rest_fields as $rest_field) {
             register_rest_field(

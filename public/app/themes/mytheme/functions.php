@@ -5,7 +5,7 @@ add_theme_support( 'align-wide' );
 
 add_filter( 'kdmfi_featured_images', 
     function( $featured_images ) {
-        for ($i=0; $i < 9; $i++) { 
+        for ($i=0; $i < 8; $i++) { 
             $image_num = $i + 2;
             $args = [
                 'id' => 'featured-image-' . $image_num,

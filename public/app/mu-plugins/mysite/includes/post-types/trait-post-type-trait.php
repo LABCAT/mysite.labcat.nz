@@ -30,7 +30,7 @@ trait PostTypeTrait {
                 $index = 0;
                 $images[$index] = get_the_post_thumbnail_url( $post_id, 'full' );
 
-                for ($i=2; $i < 7; $i++) { 
+                for ($i=2; $i < 9; $i++) { 
                     $image_id = get_post_meta( $post_id, 'kdmfi_featured-image-' . $i, true);
                     if( $image_id && $url = wp_get_attachment_url( $image_id ) ) {
                         $index++;

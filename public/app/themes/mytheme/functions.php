@@ -14,7 +14,7 @@ add_filter( 'kdmfi_featured_images',
                 'label_set' => 'Set featured image ' . $image_num,
                 'label_remove' => 'Remove featured image ' . $image_num,
                 'label_use' => 'Set featured image ' . $image_num,
-                'post_type' => [ 'page' ],
+                'post_type' => [ 'page', 'building-blocks' ],
             ];
             $featured_images[$i] = $args;
         }
